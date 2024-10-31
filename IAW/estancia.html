@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Hoteles</title>
+    <link rel="stylesheet" href="stylee.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Buscador de Hoteles</h1>
+    <form id="searchForm">
+        <label for="zona">Selecciona una Zona:</label>
+        <select id="zona" required>
+            <option value="">--Elige una zona--</option>
+            <option value="playa">Tokyo</option>
+            <option value="montaña">Egipto</option>
+            <option value="ciudad">Corea</option>
+            <option value="rural">España</option>
+        </select>
+
+        <label for="dias">Número de Días:</label>
+        <input type="number" id="dias" min="1" max="30" placeholder="Ingresa los días" required>
+
+        <label for="tipo-hotel">Tipo de Alojamiento:</label>
+        <select id="tipo-hotel" required>
+            <option value="">--Elige un tipo--</option>
+            <option value="resort">Resort</option>
+            <option value="casa_rural">Casa Rural</option>
+            <option value="apartamentos">Apartamentos</option>
+        </select>
+
+        <label for="hotel">Selecciona un Hotel:</label>
+        <select id="hotel" required>
+            <option value="">--Elige un hotel--</option>
+            <option value="hotel1">Apartamentos de Booking</option>
+            <option value="hotel2">NH Hoteles</option>
+            <option value="hotel3">Small Luxury Hotels of the World</option>
+            <option value="hotel4">Apartamentos AIRBNB</option>
+        </select>
+
+        <button type="submit">Reservar</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('searchForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const zona = document.getElementById('zona').value;
+        const dias = document.getElementById('dias').value;
+        const tipoHotel = document.getElementById('tipo-hotel').value;
+        const hotel = document.getElementById('hotel').value;
+
+        alert(`Reservando:\nHotel: ${hotel}\nTipo: ${tipoHotel}\nZona: ${zona}\nDías: ${dias}`);
+    });
+</script>
+<p>
+    Para reservar un restaurante, <a href="reservar.php">haz clic aquí</a>.
+</p>
+
+</body>
+</html>
